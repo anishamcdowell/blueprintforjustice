@@ -1,35 +1,27 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { useHistory, withRouter } from 'react-router-dom'
 
-export default class Form extends Component {
-    constructor(props) {
-        super(props)
+const Form = (props) => {
+    let history = useHistory()
 
-        // Events that will change variables will go here!
-        // Example: this.onLocationChange = this.onLocationChange.bind(this)
-        this.onSubmit = this.onSubmit.bind(this)
-
-        this.state = {
-            // Variables will go here!
-            // Example: location: ''
-        }
+    let handleSubmit = (e) => {
+        e.preventDefault()
+        // ...
+        history.push()
     }
 
-    // Handles form submit
-    onSubmit = (err) => {
-
-    }
-
-    // Form
-    // React handles form, Express handles saving the response data
-    // Express sends returned response data to new page
-    // New page renders using returned response data
-    render = () => {
-        return (
-            <div>
-                <form onSubmit={this.onSubmit}>
-
-                </form>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <div className='form_group'>
+                    <label>Enter your city:</label>
+                    <input value={this.state.location} onChange={this.onLocationChange} />
+                </div>
+                <input type="submit" value="Submit"></input>
+            </form>
+        </div>       
+    )
 }
+
+export default withRouter(Form)
+

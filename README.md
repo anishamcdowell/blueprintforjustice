@@ -10,3 +10,6 @@ Apologies for the delay! Work runs me down some days.
 - Added a ``components`` folders to store our components.
 - Added ``Form.js``; will serve as our questionnaire handler.
 - Added comments to ``Form.js``; describes it's main function.
+
+3/2
+- Working on server-sided form logic.
